@@ -47,7 +47,7 @@ const useGetRiackAndMortyEpisodes = () => {
         error: error.message,
       });
     }
-  }, []);
+  }, [setRickAndMortyData]);
 
   const { data, called, loading, error } = rickAndMortyAtom;
 
