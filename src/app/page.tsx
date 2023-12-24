@@ -10,9 +10,7 @@ export default function Home() {
 
   useEffect(() => {
     GetRiackAndMortyEpisodes();
-  }, []);
-
-  console.log("Data=", data);
+  }, [GetRiackAndMortyEpisodes]);
 
   return (
     <main className={styles.main}>
@@ -20,17 +18,15 @@ export default function Home() {
         {data?.results.map((result) => {
           return (
             <div className={styles.boxInfo} key={result.id}>
+              <div className={styles.BoxImage}>
+                <Image src="" alt="" />
+              </div>
               <h1 className={styles.mainText}>{result.name}</h1>
               <span className={styles.text}>
                 Data de lançamento:{result.air_date}
               </span>
               <br />
               <span className={styles.text}>Episódio: {result.episode}</span>
-              <br />
-              <a target="_blank" href={result.url}>
-                {result.url}
-              </a>
-              <br />
             </div>
           );
         })}
